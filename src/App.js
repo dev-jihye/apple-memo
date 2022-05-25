@@ -9,7 +9,7 @@ function App() {
   const textRef = useRef();
 
   useEffect(() => {
-    textRef?.current?.focus();
+    isWriting && textRef?.current?.focus();
   }, [isWriting]);
 
   const onAddMemo = () => {
