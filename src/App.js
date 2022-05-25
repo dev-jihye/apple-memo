@@ -56,7 +56,6 @@ function App() {
 
   const onItemClick = (memo) => {
     setSelectedMemo(memo);
-    setIsWriting(false);
   };
 
   return (
