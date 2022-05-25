@@ -1,7 +1,9 @@
 import MemoItem from './components/MemoItem';
 import memos from './mock.json';
+import './style.css';
 
 function App() {
+
   return (
     <div className="App">
       <div className="memoContainer">
