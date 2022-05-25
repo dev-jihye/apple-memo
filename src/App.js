@@ -26,6 +26,25 @@ function App() {
     setIsWriting(true);
   };
 
+  const onChange = (e) => {
+    const changedSelectedMemo = {
+      ...selectedMemo,
+      content: e.target.value,
+    };
+    setSelectedMemo(changedSelectedMemo);
+    changeContent(changedSelectedMemo.content, changedSelectedMemo.id);
+  };
+
+  const changeContent = (contentText, id) => {
+    const checkedMemo = memos.map((memo) => {
+      if (memo.id === id) {
+        return { ...memo, content: contentText };
+      }
+      return memo;
+    });
+    setMemos(checkedMemo);
+  };
+
   return (
     <div className="App">
       <div className="memoContainer">
@@ -46,7 +65,13 @@ function App() {
           <div className="contentArea">
             {memos.length > 0 && (
               <>
-                <textarea className="contentText" rows="5" ref={textRef} />
+                <textarea
+                  className="contentText"
+                  value={selectedMemo?.content}
+                  rows="5"
+                  ref={textRef}
+                  onChange={onChange}
+                />
                 <button>삭제하기</button>
               </>
             )}
