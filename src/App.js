@@ -70,9 +70,9 @@ function App() {
           <div className="listArea">
             <ul>
               {memos &&
-                memos.map((memo, index) => (
+                memos.map((memo, id) => (
                   <MemoItem
-                    key={index}
+                    key={memo.id}
                     memo={memo}
                     onItemClick={onItemClick}
                     selectedMemo={selectedMemo}
