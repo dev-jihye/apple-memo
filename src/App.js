@@ -54,6 +54,11 @@ function App() {
     setIsWriting(false);
   };
 
+  const onItemClick = (memo) => {
+    setSelectedMemo(memo);
+    setIsWriting(false);
+  };
+
   return (
     <div className="App">
       <div className="memoContainer">
@@ -67,7 +72,12 @@ function App() {
             <ul>
               {memos &&
                 memos.map((memo, index) => (
-                  <MemoItem key={index} memo={memo} />
+                  <MemoItem
+                    key={index}
+                    memo={memo}
+                    onItemClick={onItemClick}
+                    selectedMemo={selectedMemo}
+                  />
                 ))}
             </ul>
           </div>
