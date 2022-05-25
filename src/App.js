@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import MemoItem from './components/MemoItem';
 import './style.css';
 
 function App() {
   const [memos, setMemos] = useState([]);
   const [selectedMemo, setSelectedMemo] = useState(null);
+  const [isWriting, setIsWriting] = useState(false);
+  const textRef = useRef();
+
+  useEffect(() => {
+    textRef?.current?.focus();
+  }, [isWriting]);
 
   const onAddMemo = () => {
     if (memos.length >= 1 && !memos[0].content) {
@@ -15,9 +21,9 @@ function App() {
       id: Date.now(),
       content: '',
     };
-
     setMemos([newMemo, ...memos]);
     setSelectedMemo(newMemo);
+    setIsWriting(true);
   };
 
   return (
@@ -40,7 +46,7 @@ function App() {
           <div className="contentArea">
             {memos.length > 0 && (
               <>
-                <textarea className="contentText" rows="5" />
+                <textarea className="contentText" rows="5" ref={textRef} />
                 <button>삭제하기</button>
               </>
             )}
