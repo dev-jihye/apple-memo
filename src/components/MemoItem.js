@@ -1,4 +1,5 @@
 const MemoItem = ({ memo, onItemClick, selectedMemo }) => {
+  console.log(memo);
   return (
     <li
       key={memo.id}
