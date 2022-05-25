@@ -45,6 +45,15 @@ function App() {
     setMemos(checkedMemo);
   };
 
+  const onBlur = () => {
+    const checkBlank = memos.filter((memo) => memo.content.length >= 1);
+    if (memos) {
+      setMemos(checkBlank);
+      setIsWriting(false);
+    }
+    setIsWriting(false);
+  };
+
   return (
     <div className="App">
       <div className="memoContainer">
@@ -71,6 +80,7 @@ function App() {
                   rows="5"
                   ref={textRef}
                   onChange={onChange}
+                  onBlur={onBlur}
                 />
                 <button>삭제하기</button>
               </>
