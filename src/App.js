@@ -58,6 +58,23 @@ function App() {
     setSelectedMemo(memo);
   };
 
+  const onDeleteClick = (selectedMemo) => {
+    const memoIndex = memos.indexOf(selectedMemo);
+    const remainingMemo = memos.filter((memo) => memo.id !== selectedMemo.id);
+    setMemos(remainingMemo);
+    if (memoIndex < memos.length - 1) {
+      if (memoIndex === -1 && selectedMemo.content.length > 0) {
+        setSelectedMemo(memos[1]);
+      } else if (memoIndex === -1 && selectedMemo.content.length === 0) {
+        setSelectedMemo(memos[0]);
+      } else {
+        setSelectedMemo(memos[memoIndex + 1]);
+      }
+    } else if (memoIndex === memos.length - 1) {
+      setSelectedMemo(memos[memoIndex - 1]);
+    }
+  };
+
   return (
     <div className="App">
       <div className="memoContainer">
@@ -91,7 +108,9 @@ function App() {
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                <button>삭제하기</button>
+                <button onClick={() => onDeleteClick(selectedMemo)}>
+                  삭제하기
+                </button>
               </>
             )}
           </div>
