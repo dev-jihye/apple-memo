@@ -3,8 +3,10 @@ import MemoItem from './components/MemoItem';
 import './style.css';
 
 function App() {
-  const [memos, setMemos] = useState([]);
-  const [selectedMemo, setSelectedMemo] = useState(null);
+  const [memos, setMemos] = useState(
+    JSON.parse(localStorage.getItem('MEMOS_KEY')) || []
+  );
+  const [selectedMemo, setSelectedMemo] = useState(memos[0]);
   const [isWriting, setIsWriting] = useState(false);
   const textRef = useRef();
 
@@ -61,6 +63,7 @@ function App() {
   const onDeleteClick = (selectedMemo) => {
     const memoIndex = memos.indexOf(selectedMemo);
     const remainingMemo = memos.filter((memo) => memo.id !== selectedMemo.id);
+    console.log(remainingMemo);
     setMemos(remainingMemo);
     if (memoIndex < memos.length - 1) {
       if (memoIndex === -1 && selectedMemo.content.length > 0) {
@@ -74,6 +77,12 @@ function App() {
       setSelectedMemo(memos[memoIndex - 1]);
     }
   };
+
+  useEffect(() => {
+    if (memos.length >= 0) {
+      localStorage.setItem('MEMOS_KEY', JSON.stringify(memos));
+    }
+  }, [memos]);
 
   return (
     <div className="App">
