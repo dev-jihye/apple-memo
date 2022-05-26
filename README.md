@@ -1,7 +1,7 @@
 # 리액트로 만든 심플 메모장
 
 ## 🖥 Demo
-[https://dev-jihye.github.io/apple-memo/] https://dev-jihye.github.io/apple-memo/
+[https://dev-jihye.github.io/apple-memo/] (https://dev-jihye.github.io/apple-memo/)
 <br>
 
 ## ⭐️ About The Project
