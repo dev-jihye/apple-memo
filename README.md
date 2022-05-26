@@ -3,14 +3,17 @@
 ## 🖥 Demo
 https://dev-jihye.github.io/apple-memo/
 <br>
+<br>
 
 ## ⭐️ About The Project
 리액트로 만들어본 심플한 메모장입니다.
+<br>
 <br>
 
 ## 개발 환경
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+<br>
 <br>
 
 ## 구현 내용
