@@ -89,7 +89,7 @@ function App() {
       <div className="memoContainer">
         <div className="nav">
           <button className="btn" onClick={() => onAddMemo()}>
-            메모 작성하기
+            📒 새로운 메모
           </button>
         </div>
         <section className="memoSection">
@@ -112,13 +112,16 @@ function App() {
                 <textarea
                   className="contentText"
                   value={selectedMemo?.content}
-                  rows="5"
+                  rows="10"
                   ref={textRef}
                   onChange={onChange}
                   onBlur={onBlur}
                 />
-                <button onClick={() => onDeleteClick(selectedMemo)}>
-                  삭제하기
+                <button
+                  className="btn"
+                  onClick={() => onDeleteClick(selectedMemo)}
+                >
+                  🗑 삭제하기
                 </button>
               </>
             )}
