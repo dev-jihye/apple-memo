@@ -8,7 +8,11 @@ const MemoItem = ({ memo, onItemClick, selectedMemo }) => {
       }
       onClick={() => onItemClick(memo)}
     >
-      {memo.content ? memo.content : <p className="emptyTitle">빈 메모</p>}
+      {memo.content.trim() ? (
+        memo.content
+      ) : (
+        <p className="emptyTitle">새로운 메모</p>
+      )}
     </li>
   );
 };
