@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/apple-memo/static/css/main.30555a58.css",
+    "main.js": "/apple-memo/static/js/main.ab2fcb5e.js",
+    "index.html": "/apple-memo/index.html",
+    "main.30555a58.css.map": "/apple-memo/static/css/main.30555a58.css.map",
+    "main.ab2fcb5e.js.map": "/apple-memo/static/js/main.ab2fcb5e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30555a58.css",
+    "static/js/main.ab2fcb5e.js"
+  ]
+}
